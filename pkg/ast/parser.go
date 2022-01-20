@@ -69,7 +69,8 @@ func ParseGlob(glob string, errorHandler ErrorHandler) *Description {
 		}
 		desc1 := Parse(data, f, errorHandler)
 		if desc1 == nil {
-			desc = nil
+			// desc = nil
+			continue
 		}
 		if desc != nil {
 			desc.Nodes = append(desc.Nodes, desc1.Nodes...)
